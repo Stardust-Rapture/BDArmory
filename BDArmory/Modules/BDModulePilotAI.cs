@@ -65,7 +65,7 @@ namespace BDArmory.Modules
 
         Vector3 upDirection = Vector3.up;
 
-        #region GUI
+        #region Pilot AI Settings GUI
 
         [KSPField(isPersistant = true, guiActive = true, guiActiveEditor = true, guiName = "#LOC_BDArmory_SteerFactor", //Steer Factor
             groupName = "pilotAI_PID", groupDisplayName = "#LOC_BDArmory_PilotAI_PID", groupStartCollapsed = true),
@@ -332,7 +332,7 @@ namespace BDArmory.Modules
             UI_Toggle(enabledText = "#LOC_BDArmory_On", disabledText = "#LOC_BDArmory_Off")]//On--Off
         public bool standbyMode = false;
 
-
+        #region AI Parameters
         //manueuverability and g loading data
         // float maxDynPresGRecorded;
         float dynDynPresGRecorded = 1.0f; // Start at reasonable non-zero value.
@@ -440,6 +440,8 @@ namespace BDArmory.Modules
         Vector3d commandHeading;
 
         float finalMaxSteer = 1;
+
+        #endregion
 
         #region RMB info in editor
 
@@ -1390,13 +1392,8 @@ namespace BDArmory.Modules
 
         void FlyExtend(FlightCtrlState s, Vector3 tPosition)
         {
-            if (weaponManager)
+            if (weaponManager && !weaponManager.TargetOverride)
             {
-                if (weaponManager.TargetOverride)
-                {
-                    extending = false;
-                }
-
                 float extendDistance = Mathf.Clamp(weaponManager.guardRange - 1800, 500, 4000) * extendMult; // General extending distance.
                 float desiredMinAltitude = (float)vessel.radarAltitude + (defaultAltitude - (float)vessel.radarAltitude) * extendMult; // Desired minimum altitude after extending.
 
@@ -1435,7 +1432,7 @@ namespace BDArmory.Modules
                     extending = false;
                 }
             }
-            else // No weapon manager.
+            else // No weapon manager, or TargetOverride false
             {
                 extending = false;
             }

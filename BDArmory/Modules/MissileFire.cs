@@ -3027,13 +3027,15 @@ namespace BDArmory.Modules
             if (!vessel.LandedOrSplashed && !targetMissiles)
             {
                 TargetInfo potentialAirTarget = null;
-                
-                if (BDArmorySettings.DEFAULT_FFA_TARGETING)
+
+                /* // DELETE FFA TARGETING BLOCK?
+                if (BDArmorySettings.DEFAULT_FFA_TARGETING) 
                 {
                     potentialAirTarget = BDATargetManager.GetClosestTargetWithBiasAndHysteresis(this);
                     targetDebugText = " is engaging an airborne target in FFA with ";
-                }
-                else if (this.targetPriorityEnabled)
+                }*/
+
+                if (this.targetPriorityEnabled)
                 {
                     potentialAirTarget = BDATargetManager.GetHighestPriorityTarget(this);
                     targetDebugText = " is engaging highest priority airborne target with ";
@@ -3107,12 +3109,13 @@ namespace BDArmory.Modules
             if (!targetMissiles)
             {
                 // select target based on competition style
+                /* ALSO DELETE THIS FFA TARGETING BLOCK?
                 if (BDArmorySettings.DEFAULT_FFA_TARGETING)
                 {
                     potentialTarget = BDATargetManager.GetClosestTargetWithBiasAndHysteresis(this);
                     targetDebugText = " is engaging an FFA target with ";
-                }
-                else if (this.targetPriorityEnabled)
+                }*/
+                if (this.targetPriorityEnabled)
                 {
                     potentialTarget = BDATargetManager.GetHighestPriorityTarget(this);
                     targetDebugText = " is engaging highest priority target with ";
