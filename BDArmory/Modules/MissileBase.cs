@@ -887,10 +887,6 @@ namespace BDArmory.Modules
             return _guidance.GetDirection(this, targetPosition);
         }
 
-
-
-
-
         protected void drawLabels()
         {
             if (vessel == null || !vessel.isActiveVessel) return;
