@@ -1392,8 +1392,13 @@ namespace BDArmory.Modules
 
         void FlyExtend(FlightCtrlState s, Vector3 tPosition)
         {
-            if (weaponManager && !weaponManager.TargetOverride)
+            if (weaponManager)
             {
+                if (weaponManager.TargetOverride)
+                {
+                    extending = false;
+                }
+
                 float extendDistance = Mathf.Clamp(weaponManager.guardRange - 1800, 500, 4000) * extendMult; // General extending distance.
                 float desiredMinAltitude = (float)vessel.radarAltitude + (defaultAltitude - (float)vessel.radarAltitude) * extendMult; // Desired minimum altitude after extending.
 
@@ -1432,7 +1437,7 @@ namespace BDArmory.Modules
                     extending = false;
                 }
             }
-            else // No weapon manager, or TargetOverride false
+            else // No weapon manager.
             {
                 extending = false;
             }
