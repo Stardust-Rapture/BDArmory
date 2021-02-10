@@ -1,21 +1,31 @@
 BDArmory
 ========
 
-Gun turrets and other weapon systems for KSP
+Gun turrets and other weapon systems for KSP.
+Includes AI control for crafts and built-in competition/combat modes.
 
 Original Author [BahamutoD](https://github.com/BahamutoD)
 
 Original [Forum link](http://forum.kerbalspaceprogram.com/threads/85209-BDArmory)
 
-Current [Forum link](https://forum.kerbalspaceprogram.com/index.php?/topic/184167-17x-bdarmory-continued-v130-05012019/)
+BD Armory Continued [Forum link](https://forum.kerbalspaceprogram.com/index.php?/topic/184167-17x-bdarmory-continued-v130-05012019/)
 
-Current Maintainers:
+Current (BD Armory ???) --Forum link--
+
+We give our thanks to the second dev/maintainer team of BDA, who worked on BDArmory Continued (BDAc):
 - [PapaJoe](https://github.com/PapaJoesSoup)
 - [jrodrigv](https://github.com/jrodrigv)
 - [SpannerMonkey](https://github.com/SpannerMonkey)
 - [gomker](https://github.com/gomker)
 - [TheDog](https://github.com/TheDogKSP)
 - [DoctorDavinci](https://github.com/DoctorDavinci)
+
+Current BD Armory (BDA ???) team:
+- [DocNappers](https://github.com/BrettRyland)
+- [Josue](https://github.com/josuenos)
+- [SuicidalInsanity](https://github.com/SuicidalInsanity)
+- [Stardust](https://github.com/Stardust-Rapture)
+- and others
 
 Contribution Guidance
 ========
